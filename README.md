@@ -1,7 +1,7 @@
 # Getting started with Appcelerator Titanium (OSS Version) and Atom
 
 Since version 4 of Appcelerator Titanium there are two version of Titanium: the 'Appcelerator Platform' (with Appcelerator Studio, Arrow,..) and the open source version 'Appcelerator Titanium' (http://appcelerator.org/).
-In this tutorial I'm talking about a way to get started with the open source Titanium in combination with Atom as an editor on Linux (you could use other editors like Sublime, but thats not part of this tutorial).
+In this tutorial I'm talking about a way to get started with the open source Titanium in combination with Atom as an editor on Linux (you could use other editors like Sublime, but that's not part of this tutorial).
 
 ![main view](images/main_view.png)
 
@@ -107,3 +107,18 @@ TiShadow is another great tool by David Bankier (https://github.com/dbankier/TiS
 _TiShadow provides Titanium developers the ability to deploy apps, run tests or execute code snippets live across all running iOS and Android devices._
 
 It allows you to quickly test your app on multiple devices at the same time and 'compiles' quicker then building your app all the time (about 5 seconds to get your app up and running on an android phone, for a small app). Also it works wlan, so you don't have to have your device connected.
+
+
+## Link list
+
+TBD
+
+* Appcelerator Plattform: http://appcelerator.com
+* Appcelerator Titainum (OSS): http://appcelerator.org
+* Appcelerator Community: https://community.appcelerator.com/
+* Ti-Slack: https://ti-slack.slack.com/
+* tisdk: https://github.com/dbankier/tisdk
+* TiShadow: https://github.com/dbankier/TiShadow
+* Atom: http://atom.io
+* tidev: http://www.tidev.io/
+* gitt.io: http://gitt.io/
