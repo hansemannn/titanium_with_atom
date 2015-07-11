@@ -19,13 +19,13 @@ The main parts are installed using the node.js package manager 'npm'. Check http
 
 Now open a console and run the following command to install the tools:
 
-~~~
+~~~ bash
 npm install -g titanium alloy tisdk
 ~~~
 
 After that we need to install the SDK. To do this we will the cli tool tisdk from David Bankier (https://github.com/dbankier/tisdk):
 
-~~~
+~~~bash
 # list sdks
 tisdk list
 ~~~
@@ -80,7 +80,7 @@ When you have it running open the settings (strg + ,) and install some packages:
 For this tutorial we are just creating an empty Alloy app using CLI and Atom.
 
 Open a new terminal and add the following :
-~~~
+~~~bash
 ti create -id com.test -d . -n APPNAME -p all -t app -u http://migaweb.de
 cd APPNAME/
 alloy new
@@ -101,7 +101,7 @@ There are several ways to compile your app. You can use the simulator/emulator, 
 ### cli way
 
 
-~~~
+~~~bash
 # android to device
 ti build -p android  -T device
 
@@ -114,7 +114,7 @@ ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
 You can save yourself a lot of typing when you define some aliases (e.g. 'tq' will run the whole ti command to compile it and deploy it to the connected android device)
 In Linux/OSX you open the .bashrc file and add the following aliases:
 
-~~~
+~~~bash
 alias tq='ti build -p android  -T device --skip-js-minify'
 alias tbs='ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
 ~~~
