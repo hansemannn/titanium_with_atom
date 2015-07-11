@@ -26,7 +26,7 @@ npm install -g titanium alloy tisdk
 After that we need to install the SDK. To do this we will the cli tool tisdk from David Bankier (https://github.com/dbankier/tisdk):
 
 ~~~bash
-# list sdks
+# list available titanium sdks
 tisdk list
 ~~~
 
