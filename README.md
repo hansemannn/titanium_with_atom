@@ -63,7 +63,7 @@ with this command you can check if titanium found the sdk:
 ti sdk list
 ~~~
 
-and with 
+and with
 ~~~bash
 ti info
 ~~~
@@ -80,6 +80,7 @@ When you have it running open the settings (strg + ,) and install some packages:
 
 * TSS language (highlight for TSS files, https://atom.io/packages/language-tss)
 * ti-create (create projects, controllers and widgets, https://atom.io/packages/ti-create)
+* titanium-language-javascript (Snippets, https://atom.io/packages/titanium-language-javascript)
 * minimap (small map of your code)
 * minimap-highlight-selected (shows current selected words in the minimap)
 * highlight-selected (highlight all occurrences of your current selection)
