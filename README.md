@@ -58,6 +58,18 @@ From this list we select the latest GA (4.1.0) and istall it
 tisdk install 4.1.0.GA
 ~~~
 
+with this command you can check if titanium found the sdk:
+~~~bash
+ti sdk list
+~~~
+
+and with 
+~~~bash
+ti info
+~~~
+you can see if something is missig (How to install JDK and the Android SDK will follow)
+
+
 You are ready to create titanium/alloy projects now and compile them! Time to setup the editor
 
 ## Install atom and some useful packages
@@ -81,12 +93,12 @@ For this tutorial we are just creating an empty Alloy app using CLI and Atom.
 
 Open a new terminal and add the following :
 ~~~bash
-ti create -id com.test -d . -n APPNAME -p all -t app -u http://migaweb.de
+ti create --id com.test -d . -n APPNAME -p all -t app -u http://migaweb.de
 cd APPNAME/
 alloy new
 ~~~
 
-This will create a basic app and the convert it into an Alloy project.
+This will create a basic app (name: APPNAME, bundle identifier: com.test, type:app, platform: all) and the convert it into an Alloy project.
 
 You can also use the Atom package ti-create
 
