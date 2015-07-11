@@ -67,23 +67,40 @@ Goto https://atom.io/ and install the atom editor.
 When you have it running open the settings (strg + ,) and install some packages:
 
 * TSS language (highlight for TSS files, https://atom.io/packages/language-tss)
+* ti-create (create projects, controllers and widgets, https://atom.io/packages/ti-create)
+* minimap (small map of your code)
+* minimap-highlight-selected (shows current selected words in the minimap)
+* highlight-selected (highlight all occurrences of your current selection)
+* pigments (shows the color of your hex values)
 * Linter
 * more to come
 
 ## Create your first app
 
-TBD
+For this tutorial we are just creating an empty Alloy app using CLI and Atom.
 
+Open a new terminal and add the following :
 ~~~
-ti create -id com.test -d . -n appname -p all -t app -u http://migaweb.de
-cd appname
+ti create -id com.test -d . -n APPNAME -p all -t app -u http://migaweb.de
+cd APPNAME/
 alloy new
 ~~~
 
-## Compile your apps
+This will create a basic app and the convert it into an Alloy project.
 
-### normal cli commands
-TBD
+You can also use the Atom package ti-create
+
+![main view](images/ti_create.png)
+
+It will create a new project inside the folder that is open in the tree-view. 'Create controller/widget' only work inside an existing Alloy project ("Open folder" - select the project folder).
+
+## Compile your app
+
+There are several ways to compile your app. You can use the simulator/emulator, deploy it to your device or create store apk's/ipa's. There is also a live test tool (TiShadow) which saves you a lot of time waiting for the compiler.
+
+### cli way
+
+
 ~~~
 # android to device
 ti build -p android  -T device
@@ -93,8 +110,10 @@ ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
 ~~~
 
 ### Shortcuts
-TBD
-add alias to .bashrc on linux/osx
+
+You can save yourself a lot of typing when you define some aliases (e.g. 'tq' will run the whole ti command to compile it and deploy it to the connected android device)
+In Linux/OSX you open the .bashrc file and add the following aliases:
+
 ~~~
 alias tq='titanium build -p android  -T device --skip-js-minify'
 ~~~
