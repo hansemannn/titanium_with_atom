@@ -147,5 +147,6 @@ Here are some useful Titanium ressources:
 
 Feedback appreciated.
 
-* Twitter: [@michaelgangolf](http://twitter.com/michaelgangolf)
-* Email: [Michael](mailto:miga@migaweb.de)
+* [twitter](http://twitter.com/michaelgangolf)
+* [email](mailto:miga@migaweb.de)
+* [www](http://www.migaweb.de)
