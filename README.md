@@ -126,7 +126,7 @@ TiShadow is another great tool by David Bankier (https://github.com/dbankier/TiS
 
 _TiShadow provides Titanium developers the ability to deploy apps, run tests or execute code snippets live across all running iOS and Android devices._
 
-It allows you to quickly test your app on multiple devices at the same time and 'compiles' quicker then building your app all the time (about 5 seconds to get your app up and running on an android phone, for a small app). Also it works wlan, so you don't have to have your device connected.
+It allows you to quickly test your app on multiple devices at the same time and 'compiles' quicker then building your app all the time (about 5 seconds to get your app up and running on an android phone, for a small app). Also it works over wifi, so you don't have to have your device connected.
 
 
 ## Link list
@@ -142,3 +142,10 @@ Here are some useful Titanium ressources:
 * Atom: http://atom.io
 * tidev: http://www.tidev.io/
 * gitt.io: http://gitt.io/
+
+## Contact me
+
+Feedback appreciated.
+
+* Twitter: [@michaelgangolf](http://twitter.com/michaelgangolf)
+* Email: [Michael](mailto:miga@migaweb.de)
