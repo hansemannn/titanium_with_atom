@@ -115,9 +115,10 @@ You can save yourself a lot of typing when you define some aliases (e.g. 'tq' wi
 In Linux/OSX you open the .bashrc file and add the following aliases:
 
 ~~~
-alias tq='titanium build -p android  -T device --skip-js-minify'
+alias tq='ti build -p android  -T device --skip-js-minify'
+alias tbs='ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
 ~~~
-then you can just write "tq" to compile and install on your connected device
+then you can just write "tq" to compile and install on your connected device or write "tbs" to build an apk for the play store.
 
 ### TiShadow
 
@@ -130,7 +131,7 @@ It allows you to quickly test your app on multiple devices at the same time and 
 
 ## Link list
 
-TBD
+Here are some useful Titanium ressources:
 
 * Appcelerator Plattform: http://appcelerator.com
 * Appcelerator Titainum (OSS): http://appcelerator.org
