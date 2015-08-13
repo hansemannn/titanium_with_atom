@@ -76,11 +76,14 @@ You are ready to create titanium/alloy projects now and compile them! Time to se
 
 Goto https://atom.io/ and install the atom editor.
 
-When you have it running open the settings (strg + ,) and install some packages:
+When you have it running open the settings (strg + ,) and install some titanium packages:
 
 * TSS language (highlight for TSS files, https://atom.io/packages/language-tss)
+* Titanium all in one package (https://github.com/yomybaby/atom-titanium)
 * ti-create (create projects, controllers and widgets, https://atom.io/packages/ti-create)
 * titanium-language-javascript (Snippets, https://atom.io/packages/titanium-language-javascript)
+
+other useful packages:
 * minimap (small map of your code)
 * minimap-highlight-selected (shows current selected words in the minimap)
 * highlight-selected (highlight all occurrences of your current selection)
@@ -121,6 +124,8 @@ ti build -p android  -T device
 # android to store/file
 ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
 ~~~
+
+TODO: compile iOS store apps
 
 ### Shortcuts
 
