@@ -83,14 +83,14 @@ Then install some Atom packages for easier Titanium coding:
 | [Language TSS](https://atom.io/packages/language-tss)                 	| Good          	| TSS only     	|             	|                    	|
 | [Titanium Alloy](https://atom.io/packages/titanium-alloy)               	| It's OK           	| Good         	|             	| Jump to definition 	|
 | [Ti-Create](https://atom.io/packages/ti-create)                    	|               	|              	| Create only 	|                    	|
-| [titanium-language-javascript](https://atom.io/packages/titanium-language-javascript) 	|               	| JS Only      	|             	|                    	|
+| [titanium language javascript](https://atom.io/packages/titanium-language-javascript) 	|               	| JS Only      	|             	|                    	|
 
-other useful packages:
-* minimap (small map of your code)
-* minimap-highlight-selected (shows current selected words in the minimap)
-* highlight-selected (highlight all occurrences of your current selection)
-* pigments (shows the color of your hex values)
-* Linter
+Other useful packages:
+* [minimap](https://atom.io/packages/minimap): A preview of the full source code.
+* [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected): A minimap binding for the highlight-selected package
+* [highlight-selected](https://atom.io/packages/highlight-selected): Highlights the current word selected when double clicking
+* [pigments](https://atom.io/packages/pigments): A package to display colors in project and files.
+* [Linter](https://atom.io/packages/linter): A Base Linter with Cow Powers
 * more to come
 
 ## Create your first app
