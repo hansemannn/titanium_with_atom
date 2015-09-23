@@ -83,7 +83,7 @@ Then install some Atom packages for easier Titanium coding:
 | [titanium language javascript](https://atom.io/packages/titanium-language-javascript) | Language | JS Autocomplete (non alloy)|                    	   
 | [Titanium Alloy](https://atom.io/packages/titanium-alloy) | add-on| All-in-one package<br>Jump to definition<br>Open related<br>TSS Highlight|
 | [Ti-Create](https://atom.io/packages/ti-create) |add-on| Create projects, controller, modules|
-
+| [Titanium-Atom-Menu](https://github.com/HazemKhaled/Titanium-Atom-menu)| add-on| Run in simulator (wip)|
 
 Other useful non-titanium packages/add-ons:
 
