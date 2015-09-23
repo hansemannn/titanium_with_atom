@@ -123,9 +123,13 @@ ti build -p android  -T device
 
 # android to store/file
 ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
-~~~
 
-TODO: compile iOS store apps
+# iOS simulator iphone5
+ti build --skip-js-minify -p ios -T simulator -Y iphone --retina --tall --sim64btin
+
+# iOS to ipa
+ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 8.4 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .
+~~~
 
 ### Shortcuts
 
@@ -134,7 +138,9 @@ In Linux/OSX you open the .bashrc file and add the following aliases:
 
 ~~~bash
 alias tq='ti build -p android  -T device --skip-js-minify'
+alias tq_ios='ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 8.4 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .'
 alias tbs='ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
+alias tq_sim_iphone5='ti build --skip-js-minify -p ios -T simulator -Y iphone --retina --tall --sim64btin'
 ~~~
 then you can just write "tq" to compile and install on your connected device or write "tbs" to build an apk for the play store.
 
