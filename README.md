@@ -41,15 +41,7 @@ The output will be something like this
 4.0.0.RC2
 4.0.0.RC
 4.0.0.GA
-4.0.0.Beta4
-4.0.0.Beta3
-4.0.0.Beta2
-3.5.1.RC
-3.5.1.GA
-3.5.1.Alpha
-3.5.0.RC3
-3.5.0.RC2
-3.5.0.RC
+...
 ~~~
 
 From this list we select the latest GA (4.1.0) and istall it
@@ -72,26 +64,37 @@ you can see if something is missig (How to install JDK and the Android SDK will 
 
 You are ready to create titanium/alloy projects now and compile them! Time to setup the editor
 
+##### newest SDK
+The newest SDK is not available as a binary with tisdk. You have to compile it with:
+~~~bash
+tisdk build 5.0.0.GA
+~~~
+For more information visit https://github.com/dbankier/tisdk and have a look at "Manual builds"
+
 ## Install atom and some useful packages
 
 Goto https://atom.io/ and install the atom editor.
 
 Then install some Atom packages for easier Titanium coding:
 
-|                              	| TSS Highlight 	| Autocomplete 	| CLI         	| Other              	|
-|------------------------------	|---------------	|--------------	|-------------	|--------------------	|
-| [Language TSS](https://atom.io/packages/language-tss)                 	| Good          	| TSS only     	|             	|                    	|
-| [Titanium Alloy](https://atom.io/packages/titanium-alloy)               	| It's OK           	| Good         	|             	| Jump to definition 	|
-| [Ti-Create](https://atom.io/packages/ti-create)                    	|               	|              	| Create only 	|                    	|
-| [titanium language javascript](https://atom.io/packages/titanium-language-javascript) 	|               	| JS Only      	|             	|                    	|
+|Name | Type 	|  Features 	|
+|------------------------------	|---------------	|--------------
+| [Language TSS](https://atom.io/packages/language-tss) | Language | TSS highlight and autocomplete |
+| [titanium language javascript](https://atom.io/packages/titanium-language-javascript) | Language | JS Autocomplete (non alloy)|                    	   
+| [Titanium Alloy](https://atom.io/packages/titanium-alloy) | add-on| All-in-one package<br>Jump to definition<br>Open related<br>TSS Highlight|
+| [Ti-Create](https://atom.io/packages/ti-create) |add-on| Create projects, controller, modules|
 
-Other useful packages:
-* [minimap](https://atom.io/packages/minimap): A preview of the full source code.
-* [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected): A minimap binding for the highlight-selected package
-* [highlight-selected](https://atom.io/packages/highlight-selected): Highlights the current word selected when double clicking
-* [pigments](https://atom.io/packages/pigments): A package to display colors in project and files.
-* [Linter](https://atom.io/packages/linter): A Base Linter with Cow Powers
-* more to come
+
+Other useful non-titanium packages/add-ons:
+
+|Name |  Features 	|
+|------------------------------	|--------------
+| [minimap](https://atom.io/packages/minimap) | A preview of the full source code.|
+| [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) | A minimap binding for the highlight-selected package|
+| [highlight-selected](https://atom.io/packages/highlight-selected) | Highlights the current word selected when double clicking|
+| [pigments](https://atom.io/packages/pigments) | A package to display colors in project and files.|
+| [Linter](https://atom.io/packages/linter) | A Base Linter with Cow Powers|
+
 
 ## Create your first app
 
@@ -130,7 +133,14 @@ ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
 ti build --skip-js-minify -p ios -T simulator -Y iphone --retina --tall --sim64btin
 
 # iOS to ipa
-ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 8.4 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .
+ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 9.0 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .
+~~~
+
+##### iOS related
+
+To list all distribution names you can use:
+~~~bash
+security find-identity -v -p codesigning
 ~~~
 
 ### Shortcuts
