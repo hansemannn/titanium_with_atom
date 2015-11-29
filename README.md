@@ -5,7 +5,7 @@ best viewed on: http://m1ga.github.io/titanium_with_atom/
 Since version 4 of Appcelerator Titanium there are two version of Titanium: the 'Appcelerator Platform' (with Appcelerator Studio, Arrow,..) and the open source version 'Appcelerator Titanium' (http://appcelerator.org/).
 In this tutorial I'm talking about a way to get started with the open source Titanium in combination with Atom as an editor on Linux (you could use other editors like Sublime, but that's not part of this tutorial).
 
-![main view](https://raw.githubusercontent.com/m1ga/titanium_with_atom/master/images/main_view.png)
+![main view](images/main_view.png)
 
 ## Installing Appcelerator Titanium
 
