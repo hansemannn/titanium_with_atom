@@ -7,7 +7,7 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 ## Installing Appcelerator Titanium
 
-The current 'general availability' version of the SDK is 4.1.0GA
+The current free 'general availability' version of the SDK is 4.1.0.GA
 
 At first we need to setup Titanium:
 * command line tools (CLI) to compile the apps
@@ -16,6 +16,34 @@ At first we need to setup Titanium:
 * the SDK
 
 The main parts are installed using the node.js package manager 'npm'. Check https://nodejs.org/ if you need to install it.
+
+### Using Fedora
+
+If you are using Fedora 23 you can run the following commands to get the needed libraries:
+```bash
+# install tools and libraries needed for android sdk
+dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
+
+# intall npm version 4.2.2
+npm install -g npm
+npm install n -g
+n 4.2.2
+
+# install cli tools
+npm install -g titanium alloy appcelerator
+```
+* Install Java JDK 8: http://www.if-not-true-then-false.com/2014/install-oracle-java-8-on-fedora-centos-rhel/
+* Download Android SDK (SDK Tools only): https://developer.android.com/sdk/index.html#Other
+* Unzip Android SDK and run android to install SDK
+* adjust you .bash_profile:
+```bash
+echo " PATH=$PATH:$HOME/.local/bin:$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform-tools:/usr/java/latest/bin"
+echo " export ANDROID_SDK=$HOME/android-sdk-linux"
+echo " export JAVA_HOME=/usr/java/latest"
+echo "export PATH"
+```
+
+### other platforms
 
 Now open a console and run the following command to install the tools:
 
@@ -70,6 +98,9 @@ The newest SDK is not available as a binary with tisdk. You have to compile it w
 tisdk build 5.0.0.GA
 ~~~
 For more information visit https://github.com/dbankier/tisdk and have a look at "Manual builds"
+
+### other method
+[Codexcast](https://codexcasts.com/) released a video about "[Getting Setup With Titanium Mobile OSS: including compiling the SDK](https://codexcasts.com/episodes/getting-setup-with-titanium-mobile-oss-including-compiling-the-sdk)"
 
 ## Install atom and some useful packages
 
@@ -128,11 +159,11 @@ ti build -p android  -T device
 # android to store/file
 ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
 
-# iOS simulator iphone5
-ti build --skip-js-minify -p ios -T simulator -Y iphone --retina --tall --sim64btin
+# iOS simulator - will show a menu to select the size/device
+ti build -p ios -C ?
 
-# iOS to ipa
-ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 9.0 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .
+# iOS to ipa - will show a menu to select the keys
+ti build -p ios --deploy-type production --ios-version 9.0 --keychain --target dist-adhoc --output-dir .
 ~~~
 
 ##### iOS related
@@ -151,7 +182,7 @@ In Linux/OSX you open the .bashrc file and add the following aliases:
 alias tq='ti build -p android  -T device --skip-js-minify'
 alias tq_ios='ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 8.4 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .'
 alias tbs='ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
-alias tq_sim_iphone5='ti build --skip-js-minify -p ios -T simulator -Y iphone --retina --tall --sim64btin'
+alias tq_select='ti build -p ios -C ?'
 ~~~
 then you can just write "tq" to compile and install on your connected device or write "tbs" to build an apk for the play store.
 
