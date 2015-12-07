@@ -121,11 +121,13 @@ Other useful non-titanium packages/add-ons:
 
 |Name |  Features 	|
 |------------------------------	|--------------
+| [Atom Beautify](https://atom.io/packages/atom-beautify) | Code beautifier (tss, xml, js support)|
 | [minimap](https://atom.io/packages/minimap) | A preview of the full source code.|
 | [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) | A minimap binding for the highlight-selected package|
 | [highlight-selected](https://atom.io/packages/highlight-selected) | Highlights the current word selected when double clicking|
 | [pigments](https://atom.io/packages/pigments) | A package to display colors in project and files.|
 | [Linter](https://atom.io/packages/linter) | A Base Linter with Cow Powers|
+| [Project Manager](https://atom.io/packages/project-manager) | Project manager|
 
 
 ## Create your first app
