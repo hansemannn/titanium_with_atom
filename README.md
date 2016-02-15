@@ -7,6 +7,24 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 ![main view](images/main_view.png)
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Installing Appcelerator Titanium](#)
+	- [Using Fedora](#)
+	- [other platforms](#)
+	- [get the newest SDK](#)
+	   - [other methods](#)
+- [Install atom and some useful packages](#)
+- [Create your first app](#)
+- [Compile your app](#)
+	- [cli way](#)
+	     - [iOS related](#)
+	- [Shortcuts](#)
+	- [TiShadow](#)
+- [Link list](#)
+- [Contact me](#)
+
+
 ## Installing Appcelerator Titanium
 
 The current free 'general availability' version of the SDK is 4.1.0.GA
@@ -94,15 +112,16 @@ you can see if something is missig (How to install JDK and the Android SDK will 
 
 You are ready to create titanium/alloy projects now and compile them! Time to setup the editor
 
-##### newest SDK
+### get the newest SDK
 The newest SDK is not available as a binary with tisdk. You have to compile it with:
 ~~~bash
 tisdk build 5.0.0.GA
 ~~~
 For more information visit https://github.com/dbankier/tisdk and have a look at "Manual builds"
 
-### other method
-[Codexcast](https://codexcasts.com/) released a video about "[Getting Setup With Titanium Mobile OSS: including compiling the SDK](https://codexcasts.com/episodes/getting-setup-with-titanium-mobile-oss-including-compiling-the-sdk)"
+#### other methods
+* [Codexcast](https://codexcasts.com/) released a video about "[Getting Setup With Titanium Mobile OSS: including compiling the SDK](https://codexcasts.com/episodes/getting-setup-with-titanium-mobile-oss-including-compiling-the-sdk)"
+* get the unofficial nightly builds at http://builds.appcelerator.com.s3.amazonaws.com/index.html#master
 
 ## Install atom and some useful packages
 
