@@ -7,24 +7,27 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 ![main view](images/main_view.png)
 
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Getting started with Appcelerator Titanium (OSS Version) and Atom](#)
-	- [Installing Appcelerator Titanium](#)
-		- [Using Fedora](#)
-		- [other platforms](#)
-		- [get the newest SDK](#)
-			- [other methods](#)
-	- [Install atom and some useful packages](#)
-	- [Create your first app](#)
-	- [Compile your app](#)
-		- [cli way](#)
-			- [iOS related](#)
-		- [Shortcuts](#)
-		- [TiShadow](#)
-	- [Link list](#)
-	- [Contact me](#)
+- [Getting started with Appcelerator Titanium (OSS Version) and Atom](#getting-started-with-appcelerator-titanium-oss-version-and-atom)
+  - [Installing Appcelerator Titanium](#installing-appcelerator-titanium)
+    - [Using Fedora](#using-fedora)
+    - [other platforms](#other-platforms)
+    - [get the newest SDK](#get-the-newest-sdk)
+      - [other methods](#other-methods)
+  - [Install atom and some useful packages](#install-atom-and-some-useful-packages)
+  - [Create your first app](#create-your-first-app)
+  - [Compile your app](#compile-your-app)
+    - [cli way](#cli-way)
+        - [iOS related](#ios-related)
+    - [Shortcuts](#shortcuts)
+    - [TiShadow](#tishadow)
+  - [Link list](#link-list)
+  - [Contact me](#contact-me)
 
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Installing Appcelerator Titanium
 
