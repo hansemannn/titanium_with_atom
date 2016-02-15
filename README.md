@@ -9,20 +9,21 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [Installing Appcelerator Titanium](#)
-	- [Using Fedora](#)
-	- [other platforms](#)
-	- [get the newest SDK](#)
-	   - [other methods](#)
-- [Install atom and some useful packages](#)
-- [Create your first app](#)
-- [Compile your app](#)
-	- [cli way](#)
-	     - [iOS related](#)
-	- [Shortcuts](#)
-	- [TiShadow](#)
-- [Link list](#)
-- [Contact me](#)
+- [Getting started with Appcelerator Titanium (OSS Version) and Atom](#)
+	- [Installing Appcelerator Titanium](#)
+		- [Using Fedora](#)
+		- [other platforms](#)
+		- [get the newest SDK](#)
+			- [other methods](#)
+	- [Install atom and some useful packages](#)
+	- [Create your first app](#)
+	- [Compile your app](#)
+		- [cli way](#)
+			- [iOS related](#)
+		- [Shortcuts](#)
+		- [TiShadow](#)
+	- [Link list](#)
+	- [Contact me](#)
 
 
 ## Installing Appcelerator Titanium
