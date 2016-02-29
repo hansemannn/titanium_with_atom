@@ -54,7 +54,7 @@ npm install n -g
 n 4.2.2
 
 # install cli tools
-npm install -g titanium alloy appcelerator
+npm install -g titanium alloy appcelerator tisdk
 ```
 * Install Java JDK 8: http://www.if-not-true-then-false.com/2014/install-oracle-java-8-on-fedora-centos-rhel/
 * Download Android SDK (SDK Tools only): https://developer.android.com/sdk/index.html#Other
@@ -68,6 +68,8 @@ echo "export PATH"
 ```
 
 ### OSX / Windows
+
+*TODO: install node/npm on Windows / OSX*
 
 Open a console and run the following command to install the tools:
 
