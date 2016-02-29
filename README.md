@@ -29,7 +29,7 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 ## Installing Appcelerator Titanium
 
-The current free 'general availability' version of the SDK is 4.1.0.GA
+The current (at the moment of doing this doc) free 'general availability' version of the SDK was 4.1.0.GA
 
 At first we need to setup Titanium:
 * command line tools (CLI) to compile the apps
@@ -111,7 +111,6 @@ ti info
 ~~~
 you can see if something is missig (How to install JDK and the Android SDK will follow)
 
-
 You are ready to create titanium/alloy projects now and compile them! Time to setup the editor
 
 ### get the newest SDK
@@ -147,7 +146,10 @@ Other useful non-titanium packages/add-ons:
 | [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) | A minimap binding for the highlight-selected package|
 | [highlight-selected](https://atom.io/packages/highlight-selected) | Highlights the current word selected when double clicking|
 | [pigments](https://atom.io/packages/pigments) | A package to display colors in project and files.|
-| [Linter](https://atom.io/packages/linter) | A Base Linter with Cow Powers|
+| [Linter](https://atom.io/packages/linter) | A Base Linter core with Cow Powers (does nothing by itself, it's an API base)|
+| [Linter-jshint](https://atom.io/packages/linter-jshint) | Linter plugin for JavaScript (this checks your JS code)|
+| [DocBlockr](https://atom.io/packages/docblockr) | A helper package for writing documentation|
+| [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more|
 | [Project Manager](https://atom.io/packages/project-manager) | Project manager|
 
 
@@ -200,8 +202,9 @@ security find-identity -v -p codesigning
 
 ### Shortcuts
 
-You can save yourself a lot of typing when you define some aliases (e.g. 'tq' will run the whole ti command to compile it and deploy it to the connected android device)
-In Linux/OSX you open the .bashrc file and add the following aliases:
+You can save yourself a lot of typing when you define some aliases (e.g. 'tq' will run the whole ti command to compile it and deploy it to the connected android device).
+
+In **Linux/OSX** you open the *.bashrc* file and add the following aliases:
 
 ~~~bash
 alias tq='ti build -p android  -T device --skip-js-minify'
@@ -210,6 +213,27 @@ alias tbs='ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
 alias tq_select='ti build -p ios -C ?'
 ~~~
 then you can just write "tq" to compile and install on your connected device or write "tbs" to build an apk for the play store.
+
+In **Windows**, the basic aliases command is not enough (you can't attach options in alias), so you must use *.bat* files or, a better solution, powershell aliases+functions. As you may want to have it permanently on your shell session, first you must create a powershell session file, the equivalent to *.bashrc* on Linux. So, open a PowerShell command line and do:
+
+*NOTE: You should need to activate the execution policy allowing scripts locally in order this solution to work. Open the powershell command line as administrator and type `set-executionpolicy remotesigned`*
+
+~~~bash
+# Checking if profile exists
+PS C:\> $profile
+# If you cannot see/access the indicated folder, force the creation
+PS C:\> New-Item -path $profile -type file -force
+~~~
+
+Ok, now you can open the *Microsoft.PowerShell_profile.ps1* file and create your functions+aliases
+~~~text
+Function appcBuildAndroid {ti build -p android -T device --skip-js-minify}
+New-Alias tib appcBuildAndroid
+
+Function appcBuildPlayStore {ti build -p android -K C:\Android\Mykeys\keyfile.keystore -T dist-playstore}
+New-Alias tibs appcBuildPlayStore
+~~~
+The next time you open a PowerShell console, you will have available the aliases *tib* and *tibs* to compile for Android or for Play Store. Of course they are examples. Do as many as you want.
 
 ### TiShadow
 
