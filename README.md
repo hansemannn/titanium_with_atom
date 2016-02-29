@@ -9,21 +9,23 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-- [Getting started with Appcelerator Titanium (OSS Version) and Atom](#getting-started-with-appcelerator-titanium-oss-version-and-atom)
-  - [Installing Appcelerator Titanium](#installing-appcelerator-titanium)
-    - [Using Fedora](#using-fedora)
-    - [other platforms](#other-platforms)
-    - [get the newest SDK](#get-the-newest-sdk)
-      - [other methods](#other-methods)
-  - [Install atom and some useful packages](#install-atom-and-some-useful-packages)
-  - [Create your first app](#create-your-first-app)
-  - [Compile your app](#compile-your-app)
-    - [cli way](#cli-way)
-        - [iOS related](#ios-related)
-    - [Shortcuts](#shortcuts)
-    - [TiShadow](#tishadow)
-  - [Link list](#link-list)
-  - [Contact me](#contact-me)
+- [Installing Appcelerator Titanium](#installing-appcelerator-titanium)
+  - [Linux (Fedora)](#linux-fedora)
+  - [OSX / Windows](#osx--windows)
+- [Titanium SDK](#titanium-sdk)
+  - [get the newest SDK](#get-the-newest-sdk)
+    - [other methods](#other-methods)
+- [Install Atom (and some useful packages)](#install-atom-and-some-useful-packages)
+- [Create your first app](#create-your-first-app)
+- [Compile your app](#compile-your-app)
+  - [cli way](#cli-way)
+      - [iOS related](#ios-related)
+  - [Shortcuts](#shortcuts)
+    - [Linux / OSX](#linux--osx)
+    - [Windows](#windows)
+  - [TiShadow](#tishadow)
+- [Link list](#link-list)
+- [Contact me](#contact-me)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -39,7 +41,7 @@ At first we need to setup Titanium:
 
 The main parts are installed using the node.js package manager 'npm'. Check https://nodejs.org/ if you need to install it.
 
-### Using Fedora
+### Linux (Fedora)
 
 If you are using Fedora 23 you can run the following commands to get the needed libraries:
 ```bash
@@ -65,13 +67,15 @@ echo " export JAVA_HOME=/usr/java/latest"
 echo "export PATH"
 ```
 
-### other platforms
+### OSX / Windows
 
-Now open a console and run the following command to install the tools:
+Open a console and run the following command to install the tools:
 
 ~~~ bash
 npm install -g titanium alloy tisdk
 ~~~
+
+## Titanium SDK
 
 After that we need to install the SDK. To do this we will the cli tool tisdk from David Bankier (https://github.com/dbankier/tisdk):
 
@@ -124,7 +128,7 @@ For more information visit https://github.com/dbankier/tisdk and have a look at 
 * [Codexcast](https://codexcasts.com/) released a video about "[Getting Setup With Titanium Mobile OSS: including compiling the SDK](https://codexcasts.com/episodes/getting-setup-with-titanium-mobile-oss-including-compiling-the-sdk)"
 * get the unofficial nightly builds at http://builds.appcelerator.com.s3.amazonaws.com/index.html#master
 
-## Install atom and some useful packages
+## Install Atom (and some useful packages)
 
 Goto https://atom.io/ and install the atom editor.
 
@@ -204,6 +208,8 @@ security find-identity -v -p codesigning
 
 You can save yourself a lot of typing when you define some aliases (e.g. 'tq' will run the whole ti command to compile it and deploy it to the connected android device).
 
+#### Linux / OSX
+
 In **Linux/OSX** you open the *.bashrc* file and add the following aliases:
 
 ~~~bash
@@ -213,6 +219,8 @@ alias tbs='ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
 alias tq_select='ti build -p ios -C ?'
 ~~~
 then you can just write "tq" to compile and install on your connected device or write "tbs" to build an apk for the play store.
+
+#### Windows
 
 In **Windows**, the basic aliases command is not enough (you can't attach options in alias), so you must use *.bat* files or, a better solution, powershell aliases+functions. As you may want to have it permanently on your shell session, first you must create a powershell session file, the equivalent to *.bashrc* on Linux. So, open a PowerShell command line and do:
 
