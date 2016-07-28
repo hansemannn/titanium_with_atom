@@ -192,11 +192,11 @@ ti build -p android  -T device
 # android to store/file
 ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
 
-# iOS simulator - will show a menu to select the size/device
+# iOS simulator: will show a menu to select the size/device (e.g. press 8 for iPhone 5S
 ti build -p ios -C ?
 
-# iOS to ipa - will show a menu to select the keys
-ti build -p ios --deploy-type production --ios-version 9.0 --keychain --target dist-adhoc --output-dir .
+# iOS ipa/device/store: will show you a menu to select the different profiles
+ti build -p ios --target ?
 ~~~
 
 ##### iOS related
