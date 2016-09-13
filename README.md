@@ -155,7 +155,8 @@ Other useful non-titanium packages/add-ons:
 | [Linter](https://atom.io/packages/linter) | A Base Linter core with Cow Powers (does nothing by itself, it's an API base)|
 | [Linter-jshint](https://atom.io/packages/linter-jshint) | Linter plugin for JavaScript (this checks your JS code)|
 | [DocBlockr](https://atom.io/packages/docblockr) | A helper package for writing documentation|
-| [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more|
+| [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more. NOTE: will probably fail with newer Atom versions, try next)|
+| [Platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal) | An active fork from previous terminal package for Atom, running in newer versions, complete with themes and more|
 | [Project Manager](https://atom.io/packages/project-manager) | Project manager|
 
 
