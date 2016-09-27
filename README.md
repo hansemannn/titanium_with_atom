@@ -155,7 +155,7 @@ Other useful non-titanium packages/add-ons:
 | [Linter](https://atom.io/packages/linter) | A Base Linter core with Cow Powers (does nothing by itself, it's an API base)|
 | [Linter-jshint](https://atom.io/packages/linter-jshint) | Linter plugin for JavaScript (this checks your JS code)|
 | [DocBlockr](https://atom.io/packages/docblockr) | A helper package for writing documentation|
-| [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more. NOTE: will probably fail with newer Atom versions, try next)|
+| [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more. NOTE: will probably **fail** with newer Atom versions, try next|
 | [Platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal) | An active fork from previous terminal package for Atom, running in newer versions, complete with themes and more|
 | [Project Manager](https://atom.io/packages/project-manager) | Project manager|
 
@@ -245,6 +245,8 @@ Function appcBuildPlayStore {ti build -p android -K C:\Android\Mykeys\keyfile.ke
 New-Alias tibs appcBuildPlayStore
 ~~~
 The next time you open a PowerShell console, you will have available the aliases *tib* and *tibs* to compile for Android or for Play Store. Of course they are examples. Do as many as you want.
+
+*Here you can see a Windows Power Shell profile example, preconfigured: https://gist.github.com/mcvendrell/b4bacd36b834303a4e5f61afc947706a*
 
 ### TiShadow
 
