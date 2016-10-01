@@ -148,17 +148,18 @@ Other useful non-titanium packages/add-ons:
 |Name |  Features 	|
 |------------------------------	|--------------
 | [Atom Beautify](https://atom.io/packages/atom-beautify) | Code beautifier (tss, xml, js support)|
-| [minimap](https://atom.io/packages/minimap) | A preview of the full source code.|
-| [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) | A minimap binding for the highlight-selected package|
-| [highlight-selected](https://atom.io/packages/highlight-selected) | Highlights the current word selected when double clicking|
-| [pigments](https://atom.io/packages/pigments) | A package to display colors in project and files.|
-| [Linter](https://atom.io/packages/linter) | A Base Linter core with Cow Powers (does nothing by itself, it's an API base)|
-| [Linter-jshint](https://atom.io/packages/linter-jshint) | Linter plugin for JavaScript (this checks your JS code)|
 | [DocBlockr](https://atom.io/packages/docblockr) | A helper package for writing documentation|
-| [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more. NOTE: will probably **fail** with newer Atom versions, try next|
+| [highlight-selected](https://atom.io/packages/highlight-selected) | Highlights the current word selected when double clicking|
+| [Linter-jshint](https://atom.io/packages/linter-jshint) | Linter plugin for JavaScript (this checks your JS code)|
+| [Linter](https://atom.io/packages/linter) | A Base Linter core with Cow Powers (does nothing by itself, it's an API base)|
+| [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) | A minimap binding for the highlight-selected package|
+| [minimap](https://atom.io/packages/minimap) | A preview of the full source code.|
+| [pigments](https://atom.io/packages/pigments) | A package to display colors in project and files.|
 | [Platformio-ide-terminal](https://atom.io/packages/platformio-ide-terminal) | An active fork from previous terminal package for Atom, running in newer versions, complete with themes and more|
 | [Project Manager](https://atom.io/packages/project-manager) | Project manager|
-
+| [symbols-list](https://atom.io/packages/symbols-list) | Will display all functions in a sidebar|
+| [sync-settings](https://atom.io/packages/sync-settings) | Syncs Atom settings, plugins etc using Gists. Very handy if you have multiple machines and want to have the same settings everywhere|
+| [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more. NOTE: will probably **fail** with newer Atom versions, try next|
 
 ## Create your first app
 
