@@ -43,7 +43,7 @@ The main parts are installed using the node.js package manager 'npm'. Check http
 
 ### Linux (Fedora)
 
-If you are using Fedora 23 you can run the following commands to get the needed libraries:
+If you are using Fedora 23/24 you can run the following commands to get the needed libraries:
 ```bash
 # install tools and libraries needed for android sdk
 dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
@@ -115,7 +115,7 @@ and with
 ~~~bash
 ti info
 ~~~
-you can see if something is missig (How to install JDK and the Android SDK will follow)
+you can see if something is missing (How to install JDK and the Android SDK will follow)
 
 You are ready to create titanium/alloy projects now and compile them! Time to setup the editor
 
