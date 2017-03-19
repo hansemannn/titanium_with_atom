@@ -43,15 +43,14 @@ The main parts are installed using the node.js package manager 'npm'. Check http
 
 ### Linux (Fedora)
 
-If you are using Fedora 23/24 you can run the following commands to get the needed libraries:
+If you are using Fedora 25 you can run the following commands to get the needed libraries:
 ```bash
 # install tools and libraries needed for android sdk
 dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
 
 # intall npm version 4.2.2
-npm install -g npm
-npm install n -g
-n 4.2.2
+npm install -g n
+n 4.6.2
 
 # install cli tools
 npm install -g titanium alloy appcelerator tisdk
@@ -132,7 +131,14 @@ For more information visit https://github.com/dbankier/tisdk and have a look at 
 
 ## Install Atom (and some useful packages)
 
+### Windows/OSX:
 Goto https://atom.io/ and install the atom editor.
+
+### Linux (Fedora):
+~~~bash
+dnf copr enable mosquito/atom
+dnf install atom
+~~~
 
 Then install some Atom packages for easier Titanium coding:
 
