@@ -78,56 +78,18 @@ npm install -g titanium alloy tisdk
 
 ## Titanium SDK
 
-After that we need to install the SDK. To do this we will the cli tool tisdk from David Bankier (https://github.com/dbankier/tisdk):
-
-~~~bash
-# list available titanium sdks
-tisdk list
+After that we need to install the SDK. 
+You can use tisdk by David Bankier (https://github.com/dbankier/tisdk) or use the included `ti` tool to get a nighlty build version:
+~~~ bash
+titanium sdk install --branch 6_0_X
 ~~~
 
-The output will be something like this
-
-~~~
-4.1.0.GA
-4.1.0.Beta
-4.0.0.RC5
-4.0.0.RC4
-4.0.0.RC3
-4.0.0.RC2
-4.0.0.RC
-4.0.0.GA
-...
-~~~
-
-From this list we select the latest GA (4.1.0) and istall it
-
-~~~
-tisdk install 4.1.0.GA
-~~~
-
-with this command you can check if titanium found the sdk:
-~~~bash
-ti sdk list
-~~~
-
-and with
-~~~bash
-ti info
-~~~
-you can see if something is missing (How to install JDK and the Android SDK will follow)
-
-You are ready to create titanium/alloy projects now and compile them! Time to setup the editor
-
-### get the newest SDK
-The newest SDK is not available as a binary with tisdk. You have to compile it with:
-~~~bash
-tisdk build 5.0.0.GA
-~~~
-For more information visit https://github.com/dbankier/tisdk and have a look at "Manual builds"
+You can also download a ZIP from http://builds.appcelerator.com/#master and install it using `ti sdk install zipfile`.
+These builds are not officially supported but work the same as the GA versions.
 
 #### other methods
 * [Codexcast](https://codexcasts.com/) released a video about "[Getting Setup With Titanium Mobile OSS: including compiling the SDK](https://codexcasts.com/episodes/getting-setup-with-titanium-mobile-oss-including-compiling-the-sdk)"
-* get the unofficial nightly builds at http://builds.appcelerator.com.s3.amazonaws.com/index.html#master
+* get the unofficial nightly builds at http://builds.appcelerator.com/#master
 
 ## Install Atom (and some useful packages)
 
