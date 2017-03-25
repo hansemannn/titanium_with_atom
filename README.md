@@ -11,7 +11,8 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 - [Installing Appcelerator Titanium](#installing-appcelerator-titanium)
   - [Linux (Fedora)](#linux-fedora)
-  - [OSX / Windows](#osx--windows)
+  - [Windows](#windows)
+  - [OSX](#osx)  
 - [Titanium SDK](#titanium-sdk)
   - [get the newest SDK](#get-the-newest-sdk)
     - [other methods](#other-methods)
@@ -75,6 +76,25 @@ nvm install 4.6.2   # install a new version with nvm
 nvm use 4.6.2       # set it
 ~~~
 
+#### Java JDK
+
+Download and install JDK 8 from http://www.oracle.com/technetwork/java/javase/downloads/index.html and set the JAVA_HOME env variable inside the windows advanced system settings (e.g. C:\Program Files\Java\jdk1.8.0_45)
+
+
+#### Android SDK
+Go to https://developer.android.com/studio/index.html#downloads and download the ZIP under "Get just the command line tools".
+Unzip and copy it to folder, run "android.bat" (as root) and install:
+* Android SDK tools
+* Android SDK Platfom-tools
+* Android SDK Build tools (23.0.3)
+* Android 6.0 (API 23) SDK Platform
+* other APIs if you like
+
+Download the ADB tools from https://dl.google.com/android/repository/platform-tools-latest-windows.zip and unzip it to the androidsdk folder from before.
+Add the following paths to the PATH env variable:
+* C:\Program Files\androidsdk\
+* C:\Program Files\androidsdk\platform-tools
+
 #### Titanium CLI
 
 Open a console and run the following command to install the tools:
@@ -118,7 +138,7 @@ These builds are not officially supported but work the same as the GA versions.
 Goto https://atom.io/ and install the atom editor.
 
 ### Linux (Fedora):
-~~~bash
+~~~ bash
 dnf copr enable mosquito/atom
 dnf install atom
 ~~~
@@ -155,7 +175,7 @@ Other useful non-titanium packages/add-ons:
 For this tutorial we are just creating an empty Alloy app using CLI and Atom.
 
 Open a new terminal and add the following :
-~~~bash
+~~~ bash
 ti create --id com.test -d . -n APPNAME -p all -t app -u http://migaweb.de
 cd APPNAME/
 alloy new
@@ -176,9 +196,12 @@ There are several ways to compile your app. You can use the simulator/emulator, 
 ### cli way
 
 
-~~~bash
+~~~ bash
 # android to device
 ti build -p android  -T device
+
+# android build-only (good for testing)
+ti build -p android -b --skip-minify
 
 # android to store/file
 ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
@@ -193,7 +216,7 @@ ti build -p ios --target ?
 ##### iOS related
 
 To list all distribution names you can use:
-~~~bash
+~~~ bash
 security find-identity -v -p codesigning
 ~~~
 
@@ -205,7 +228,7 @@ You can save yourself a lot of typing when you define some aliases (e.g. 'tq' wi
 
 In **Linux/OSX** you open the *.bashrc* file and add the following aliases:
 
-~~~bash
+~~~ bash
 alias tq='ti build -p android  -T device --skip-js-minify'
 alias tq_ios='ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 8.4 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .'
 alias tbs='ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
@@ -219,7 +242,7 @@ In **Windows**, the basic aliases command is not enough (you can't attach option
 
 *NOTE: You should need to activate the execution policy allowing scripts locally in order this solution to work. Open the powershell command line as administrator and type `set-executionpolicy remotesigned`*
 
-~~~bash
+~~~ bash
 # Checking if profile exists
 PS C:\> $profile
 # If you cannot see/access the indicated folder, force the creation
@@ -227,7 +250,7 @@ PS C:\> New-Item -path $profile -type file -force
 ~~~
 
 Ok, now you can open the *Microsoft.PowerShell_profile.ps1* file and create your functions+aliases
-~~~text
+~~~ text
 Function appcBuildAndroid {ti build -p android -T device --skip-js-minify}
 New-Alias tib appcBuildAndroid
 
