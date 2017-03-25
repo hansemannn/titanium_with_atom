@@ -66,9 +66,30 @@ echo " export JAVA_HOME=/usr/java/latest"
 echo "export PATH"
 ```
 
-### OSX / Windows
+### Windows
 
-*TODO: install node/npm on Windows / OSX*
+#### NodeJS
+Go to https://nodejs.org/download/release/v4.6.2/ and download NodeJS v4.6.2. If you already have a different version installed you can use nvw-windows (https://github.com/coreybutler/nvm-windows/releases) to change this version to v4.6.2.
+~~~ bash
+nvm install 4.6.2   # install a new version with nvm
+nvm use 4.6.2       # set it
+~~~
+
+#### Titanium CLI
+
+Open a console and run the following command to install the tools:
+
+~~~ bash
+npm install -g titanium alloy tisdk
+~~~
+
+### OSX
+
+#### NodeJS
+
+*Todo*
+
+#### Titanium CLI
 
 Open a console and run the following command to install the tools:
 
