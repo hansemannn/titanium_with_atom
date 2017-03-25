@@ -103,6 +103,8 @@ Open a console and run the following command to install the tools:
 npm install -g titanium alloy tisdk
 ~~~
 
+Run `ti config wizard` (1) quick setup to finish the installation
+
 ### OSX
 
 #### NodeJS
