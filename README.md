@@ -10,7 +10,9 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Installing Appcelerator Titanium](#installing-appcelerator-titanium)
-  - [Linux (Fedora)](#linux-fedora)
+  - [Linux](#linux)
+  	- [Fedora](#fedora)
+  	- [Ubuntu](#ubuntu)
   - [Windows](#windows)
   - [OSX](#osx)  
 - [Titanium SDK](#titanium-sdk)
@@ -42,19 +44,28 @@ At first we need to setup Titanium:
 
 The main parts are installed using the node.js package manager 'npm'. Check https://nodejs.org/ if you need to install it.
 
-### Linux (Fedora)
+### Linux
+
+#### Fedora
 
 If you are using Fedora 25 you can run the following commands to get the needed libraries:
 ```bash
-# install tools and libraries needed for android sdk
+# install tools and libraries
 dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
+```
+#### Ubuntu
+``` bash
+sudo apt-get install nodejs npm git gcc  gcc-multilib openjdk-8-jdk 
+```
 
+#### for all distros
+``` bash
 # intall npm version 4.2.2
 npm install -g n
 n 4.6.2
 
 # install cli tools
-npm install -g titanium alloy appcelerator tisdk
+npm install -g titanium alloy appcelerator
 ```
 * Install Java JDK 8: http://www.if-not-true-then-false.com/2014/install-oracle-java-8-on-fedora-centos-rhel/
 * Download Android SDK (SDK Tools only): https://developer.android.com/sdk/index.html#Other
