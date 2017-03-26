@@ -1,7 +1,7 @@
 # Getting started with Appcelerator Titanium (OSS Version) and Atom
 
 Since version 4 of Appcelerator Titanium there are two version of Titanium: the 'Appcelerator Platform' (with Appcelerator Studio, Arrow,..) and the open source version 'Appcelerator Titanium' (http://appcelerator.org/).
-In this tutorial I'm talking about a way to get started with the open source Titanium in combination with Atom as an editor on Linux (you could use other editors like Sublime, but that's not part of this tutorial).
+In this tutorial I'm talking about a way to get started with the open source Titanium in combination with Atom as an editor on Linux, Windows and OSX (you could use other editors like Sublime, but that's not part of this tutorial).
 
 ![main view](images/main_view.png)
 
@@ -40,7 +40,7 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 ## Installing Appcelerator Titanium
 
-The current (at the moment of doing this doc) free 'general availability' version of the SDK was 4.1.0.GA
+The current (at the moment of doing this doc) free 'general availability' version of the SDK was 6.0.3.GA
 
 At first we need to setup Titanium:
 * command line tools (CLI) to compile the apps
