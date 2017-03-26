@@ -11,21 +11,27 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 - [Installing Appcelerator Titanium](#installing-appcelerator-titanium)
   - [Linux](#linux)
-  	- [Fedora](#fedora)
-  	- [Ubuntu](#ubuntu)
+    - [Fedora](#fedora)
+    - [Ubuntu](#ubuntu)
+    - [for all distros](#for-all-distros)
   - [Windows](#windows)
-  - [OSX](#osx)  
-- [Titanium SDK](#titanium-sdk)
-  - [get the newest SDK](#get-the-newest-sdk)
-    - [other methods](#other-methods)
+    - [NodeJS](#nodejs)
+    - [Java JDK](#java-jdk)
+    - [Android SDK](#android-sdk)
+  - [OSX](#osx)
+    - [NodeJS](#nodejs-1)
+- [Titanium CLI / SDK](#titanium-cli--sdk)
 - [Install Atom (and some useful packages)](#install-atom-and-some-useful-packages)
+  - [Windows/OSX:](#windowsosx)
+  - [Linux (Fedora):](#linux-fedora)
+  - [Packages](#packages)
 - [Create your first app](#create-your-first-app)
 - [Compile your app](#compile-your-app)
   - [cli way](#cli-way)
       - [iOS related](#ios-related)
   - [Shortcuts](#shortcuts)
     - [Linux / OSX](#linux--osx)
-    - [Windows](#windows)
+    - [Windows](#windows-1)
   - [TiShadow](#tishadow)
 - [Link list](#link-list)
 - [Contact me](#contact-me)
@@ -44,6 +50,8 @@ At first we need to setup Titanium:
 
 The main parts are installed using the node.js package manager 'npm'. Check https://nodejs.org/ if you need to install it.
 
+___
+
 ### Linux
 
 #### Fedora
@@ -55,28 +63,29 @@ dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-d
 ```
 #### Ubuntu
 ``` bash
-sudo apt-get install nodejs npm git gcc  gcc-multilib openjdk-8-jdk 
+sudo apt-get install nodejs npm git gcc  gcc-multilib openjdk-8-jdk android-tools-adb
 ```
 
 #### for all distros
 ``` bash
-# intall npm version 4.2.2
+# install npm version 4.2.2
 npm install -g n
 n 4.6.2
 
-# install cli tools
-npm install -g titanium alloy appcelerator
 ```
 * Install Java JDK 8: http://www.if-not-true-then-false.com/2014/install-oracle-java-8-on-fedora-centos-rhel/
 * Download Android SDK (SDK Tools only): https://developer.android.com/sdk/index.html#Other
 * Unzip Android SDK and run android to install SDK
 * adjust you .bash_profile:
 ```bash
-echo " PATH=$PATH:$HOME/.local/bin:$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform-tools:/usr/java/latest/bin"
-echo " export ANDROID_SDK=$HOME/android-sdk-linux"
-echo " export JAVA_HOME=/usr/java/latest"
-echo "export PATH"
+ PATH = $PATH:$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform-tools:/usr/java/latest/bin
+export ANDROID_SDK=$HOME/android-sdk-linux
+export JAVA_HOME=/usr/java/latest # fedora
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-adm64 # ubuntu
 ```
+* run `source .bash_profile` to update the current session
+
+___
 
 ### Windows
 
@@ -106,15 +115,7 @@ Add the following paths to the PATH env variable:
 * C:\Program Files\androidsdk\
 * C:\Program Files\androidsdk\platform-tools
 
-#### Titanium CLI
-
-Open a console and run the following command to install the tools:
-
-~~~ bash
-npm install -g titanium alloy tisdk
-~~~
-
-Run `ti config wizard` (1) quick setup to finish the installation
+___
 
 ### OSX
 
@@ -122,15 +123,15 @@ Run `ti config wizard` (1) quick setup to finish the installation
 
 *Todo*
 
-#### Titanium CLI
+___
+
+## Titanium CLI / SDK
 
 Open a console and run the following command to install the tools:
 
 ~~~ bash
-npm install -g titanium alloy tisdk
+npm install -g titanium alloy appcelerator
 ~~~
-
-## Titanium SDK
 
 After that we need to install the SDK. 
 You can use tisdk by David Bankier (https://github.com/dbankier/tisdk) or use the included `ti` tool to get a nighlty build version:
@@ -141,9 +142,9 @@ titanium sdk install --branch 6_0_X
 You can also download a ZIP from http://builds.appcelerator.com/#master and install it using `ti sdk install zipfile`.
 These builds are not officially supported but work the same as the GA versions.
 
-#### other methods
-* [Codexcast](https://codexcasts.com/) released a video about "[Getting Setup With Titanium Mobile OSS: including compiling the SDK](https://codexcasts.com/episodes/getting-setup-with-titanium-mobile-oss-including-compiling-the-sdk)"
-* get the unofficial nightly builds at http://builds.appcelerator.com/#master
+Run `ti config wizard` (1) quick setup to finish the installation
+
+___
 
 ## Install Atom (and some useful packages)
 
@@ -155,6 +156,8 @@ Goto https://atom.io/ and install the atom editor.
 dnf copr enable mosquito/atom
 dnf install atom
 ~~~
+
+### Packages
 
 Then install some Atom packages for easier Titanium coding:
 
@@ -183,6 +186,8 @@ Other useful non-titanium packages/add-ons:
 | [sync-settings](https://atom.io/packages/sync-settings) | Syncs Atom settings, plugins etc using Gists. Very handy if you have multiple machines and want to have the same settings everywhere|
 | [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more. NOTE: will probably **fail** with newer Atom versions, try next|
 
+___
+
 ## Create your first app
 
 For this tutorial we are just creating an empty Alloy app using CLI and Atom.
@@ -201,6 +206,8 @@ You can also use the Atom package ti-create
 ![main view](images/ti_create.png)
 
 It will create a new project inside the folder that is open in the tree-view. 'Create controller/widget' only work inside an existing Alloy project ("Open folder" - select the project folder).
+
+___
 
 ## Compile your app
 
@@ -282,15 +289,16 @@ _TiShadow provides Titanium developers the ability to deploy apps, run tests or 
 
 It allows you to quickly test your app on multiple devices at the same time and 'compiles' quicker then building your app all the time (about 5 seconds to get your app up and running on an android phone, for a small app). Also it works over wifi, so you don't have to have your device connected.
 
+___
 
 ## Link list
 
-Here are some useful Titanium ressources:
+Here are some useful Titanium resources:
 
+* **Ti-Slack:**  http://tislack.org/ **Join the community!** 
 * Appcelerator Plattform: http://appcelerator.com
 * Appcelerator Titainum (OSS): http://appcelerator.org
 * Appcelerator Community: https://community.appcelerator.com/
-* Ti-Slack: https://ti-slack.slack.com/
 * tisdk: https://github.com/dbankier/tisdk
 * TiShadow: https://github.com/dbankier/TiShadow
 * Atom: http://atom.io
