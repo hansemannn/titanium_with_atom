@@ -1,6 +1,7 @@
 # Getting started with Appcelerator Titanium (OSS Version) and Atom
 
 Since version 4 of Appcelerator Titanium there are two version of Titanium: the 'Appcelerator Platform' (with Appcelerator Studio, Arrow,..) and the open source version 'Appcelerator Titanium' (http://appcelerator.org/).
+Beginning with 6.0.4.GA the "Indie Tear" is now free and you can get the latest SDK and use Hyperloop. You still can use the OSS version and use this tutorial to install Titanium.
 In this tutorial I'm talking about a way to get started with the open source Titanium in combination with Atom as an editor on Linux, Windows and OSX (you could use other editors like Sublime, but that's not part of this tutorial).
 
 ![main view](images/main_view.png)
@@ -40,7 +41,7 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 ## Installing Appcelerator Titanium
 
-The current (at the moment of doing this doc) free 'general availability' version of the SDK was 6.0.3.GA
+The current (at the moment of doing this doc) free 'general availability' version of the SDK was 6.0.4.GA
 
 At first we need to setup Titanium:
 * command line tools (CLI) to compile the apps
@@ -134,13 +135,15 @@ npm install -g titanium alloy appcelerator
 ~~~
 
 After that we need to install the SDK. 
-You can use tisdk by David Bankier (https://github.com/dbankier/tisdk) or use the included `ti` tool to get a nighlty build version:
+You can use the OSS `ti` tool to get a nighlty build version:
 ~~~ bash
 titanium sdk install --branch 6_0_X
 ~~~
 
-You can also download a ZIP from http://builds.appcelerator.com/#master and install it using `ti sdk install zipfile`.
-These builds are not officially supported but work the same as the GA versions.
+or use the free `appc` command to download the latest GA release:
+~~~ bash
+appc ti sdk install latest
+~~~
 
 Run `ti config wizard` (1) quick setup to finish the installation
 
@@ -296,9 +299,9 @@ ___
 Here are some useful Titanium resources:
 
 * **Ti-Slack:**  http://tislack.org/ **Join the community!** 
-* Appcelerator Plattform: http://appcelerator.com
-* Appcelerator Titainum (OSS): http://appcelerator.org
-* Appcelerator Community: https://community.appcelerator.com/
+* Axway Appcelerator: http://appcelerator.com
+* Axway Titainum (OSS): http://appcelerator.org
+* Axway Community: https://community.appcelerator.com/
 * tisdk: https://github.com/dbankier/tisdk
 * TiShadow: https://github.com/dbankier/TiShadow
 * Atom: http://atom.io
