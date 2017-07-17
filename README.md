@@ -188,6 +188,7 @@ Other useful non-titanium packages/add-ons:
 | [symbols-list](https://atom.io/packages/symbols-list) | Will display all functions in a sidebar|
 | [sync-settings](https://atom.io/packages/sync-settings) | Syncs Atom settings, plugins etc using Gists. Very handy if you have multiple machines and want to have the same settings everywhere|
 | [Terminal-plus](https://atom.io/packages/terminal-plus) | A terminal package for Atom, complete with themes and more. NOTE: will probably **fail** with newer Atom versions, try next|
+| [auto-close-html2](https://github.com/yubaoquan/auto-close-html2) | Automatically close XML tags]
 
 ___
 
