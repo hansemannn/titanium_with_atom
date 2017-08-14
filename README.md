@@ -1,8 +1,7 @@
-# Getting started with Appcelerator Titanium (OSS Version) and Atom
+# Getting started with Axway Appcelerator and Atom
 
-Since version 4 of Appcelerator Titanium there are two version of Titanium: the 'Appcelerator Platform' (with Appcelerator Studio, Arrow,..) and the open source version 'Appcelerator Titanium' (http://appcelerator.org/).
-Beginning with 6.0.4.GA the "Indie Tear" is now free and you can get the latest SDK and use Hyperloop. You still can use the OSS version and use this tutorial to install Titanium.
-In this tutorial I'm talking about a way to get started with the open source Titanium in combination with Atom as an editor on Linux, Windows and OSX (you could use other editors like Sublime, but that's not part of this tutorial).
+Beginning with Axway Titanium SDK 6.0.4.GA the "Indie Tear" is now free and you can get the latest SDK and use Hyperloop.
+This tutorial will get you started setting up Axway Titanium and use it in combination with Atom as an editor on Linux, Windows and OSX (you could use other editors like Sublime or Visual Studio Code but that's not part of this tutorial).
 
 ![main view](images/main_view.png)
 
@@ -14,14 +13,16 @@ In this tutorial I'm talking about a way to get started with the open source Tit
   - [Linux](#linux)
     - [Fedora](#fedora)
     - [Ubuntu](#ubuntu)
-    - [for all distros](#for-all-distros)
+    - [for all distros (if you don't have node v 6.x)](#for-all-distros-if-you-dont-have-node-v-6x)
   - [Windows](#windows)
     - [NodeJS](#nodejs)
     - [Java JDK](#java-jdk)
     - [Android SDK](#android-sdk)
   - [OSX](#osx)
     - [NodeJS](#nodejs-1)
-- [Titanium CLI / SDK](#titanium-cli--sdk)
+- [Axway Titanium SDK / CLI](#axway-titanium-sdk--cli)
+  - [free version](#free-version)
+  - [OSS version](#oss-version)
 - [Install Atom (and some useful packages)](#install-atom-and-some-useful-packages)
   - [Windows/OSX:](#windowsosx)
   - [Linux (Fedora):](#linux-fedora)
@@ -41,9 +42,9 @@ In this tutorial I'm talking about a way to get started with the open source Tit
 
 ## Installing Appcelerator Titanium
 
-The current (at the moment of doing this doc) free 'general availability' version of the SDK was 6.0.4.GA
+The current GA ('general availability') version of the SDK was 6.1.2.GA.
 
-At first we need to setup Titanium:
+At first we need to setup Axway Titanium:
 * command line tools (CLI) to compile the apps
 * the MVC framework Alloy
 * some useful tools
@@ -57,7 +58,7 @@ ___
 
 #### Fedora
 
-If you are using Fedora 25 you can run the following commands to get the needed libraries:
+If you are using Fedora 26 you can run the following commands to get the needed libraries:
 ```bash
 # install tools and libraries
 dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
@@ -67,11 +68,12 @@ dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-d
 sudo apt-get install nodejs npm git gcc  gcc-multilib openjdk-8-jdk android-tools-adb
 ```
 
-#### for all distros
+#### for all distros (if you don't have node v 6.x)
+If you do not have node v 6.x already you can up/downgrade with `n`
 ``` bash
-# install npm version 4.2.2
+# install npm version 6.x
 npm install -g n
-n 4.6.2
+n 6.11.1
 
 ```
 * Install Java JDK 8: http://www.if-not-true-then-false.com/2014/install-oracle-java-8-on-fedora-centos-rhel/
@@ -91,10 +93,10 @@ ___
 ### Windows
 
 #### NodeJS
-Go to https://nodejs.org/download/release/v4.6.2/ and download NodeJS v4.6.2. If you already have a different version installed you can use nvw-windows (https://github.com/coreybutler/nvm-windows/releases) to change this version to v4.6.2.
+Go to https://nodejs.org/download/release/v6.11.2/ and download NodeJS v6.11.2. If you already have a different version installed you can use nvw-windows (https://github.com/coreybutler/nvm-windows/releases) to change this version to v6.11.2.
 ~~~ bash
-nvm install 4.6.2   # install a new version with nvm
-nvm use 4.6.2       # set it
+nvm install 6.11.2   # install a new version with nvm
+nvm use 6.11.2       # set it
 ~~~
 
 #### Java JDK
@@ -104,7 +106,10 @@ Download and install JDK 8 from http://www.oracle.com/technetwork/java/javase/do
 
 #### Android SDK
 Go to https://developer.android.com/studio/index.html#downloads and download the ZIP under "Get just the command line tools".
-Unzip and copy it to folder, run "android.bat" (as root) and install:
+
+Unzip and copy it to a folder (e.g. C:\android). Since the Android SDK doesn't include a GUI anymore you can use an alternative GUI like:
+https://www.b4x.com/android/forum/threads/gui-sdk-manager-for-newer-versions-of-android-tools.80090/
+to install: 
 * Android SDK tools
 * Android SDK Platfom-tools
 * Android SDK Build tools (23.0.3)
@@ -113,8 +118,8 @@ Unzip and copy it to folder, run "android.bat" (as root) and install:
 
 Download the ADB tools from https://dl.google.com/android/repository/platform-tools-latest-windows.zip and unzip it to the androidsdk folder from before.
 Add the following paths to the PATH env variable:
-* C:\Program Files\androidsdk\
-* C:\Program Files\androidsdk\platform-tools
+* C:\android\androidsdk\
+* C:\android\androidsdk\platform-tools
 
 ___
 
@@ -126,7 +131,7 @@ ___
 
 ___
 
-## Titanium CLI / SDK
+## Axway Titanium SDK / CLI
 
 Open a console and run the following command to install the tools:
 
@@ -135,17 +140,24 @@ npm install -g titanium alloy appcelerator
 ~~~
 
 After that we need to install the SDK. 
-You can use the OSS `ti` tool to get a nighlty build version:
-~~~ bash
-titanium sdk install --branch 6_0_X
-~~~
 
-or use the free `appc` command to download the latest GA release:
+### free version
+The use the free/indie version you can run
 ~~~ bash
-appc ti sdk install latest
+appc setup
 ~~~
+to get the SDK and be ready to create your apps
 
-Run `ti config wizard` (1) quick setup to finish the installation
+### OSS version
+If you prefer the open source version you run:
+~~~ bash
+titanium sdk install --branch 6_1_X
+~~~
+to get the SDK (it won't be the GA version but the latest from the 6.1.x branch) and then
+~~~ bash
+ ti config wizard
+ ~~~
+ to finish the setup
 
 ___
 
@@ -156,8 +168,7 @@ Goto https://atom.io/ and install the atom editor.
 
 ### Linux (Fedora):
 ~~~ bash
-dnf copr enable mosquito/atom
-dnf install atom
+sudo dnf install $(curl -sL "https://api.github.com/repos/atom/atom/releases/latest" | grep "https.*atom.x86_64.rpm" | cut -d '"' -f 4)
 ~~~
 
 ### Packages
@@ -198,12 +209,11 @@ For this tutorial we are just creating an empty Alloy app using CLI and Atom.
 
 Open a new terminal and add the following :
 ~~~ bash
-ti create --id com.test -d . -n APPNAME -p all -t app -u http://migaweb.de
-cd APPNAME/
-alloy new
+appc new
 ~~~
+(for the OSS you change `appc` to `ti`).
 
-This will create a basic app (name: APPNAME, bundle identifier: com.test, type:app, platform: all) and the convert it into an Alloy project.
+You will see a menu where you can select "Native app - Titanium SDK - set a project name - set an app id". For the beginning say `no` to the Test-service and Hyperloop.
 
 You can also use the Atom package ti-create
 
@@ -222,19 +232,19 @@ There are several ways to compile your app. You can use the simulator/emulator, 
 
 ~~~ bash
 # android to device
-ti build -p android  -T device
+appc ti build -p android  -T device
 
 # android build-only (good for testing)
-ti build -p android -b --skip-minify
+appc ti build -p android -b --skip-minify
 
 # android to store/file
-ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
+appc ti build -p android -K /home/user/keyfile.keystore -T dist-playstore
 
 # iOS simulator: will show a menu to select the size/device (e.g. press 8 for iPhone 5S
-ti build -p ios -C ?
+appc ti build -p ios -C ?
 
 # iOS ipa/device/store: will show you a menu to select the different profiles
-ti build -p ios --target ?
+appc ti build -p ios --target ?
 ~~~
 
 ##### iOS related
@@ -253,10 +263,10 @@ You can save yourself a lot of typing when you define some aliases (e.g. 'tq' wi
 In **Linux/OSX** you open the *.bashrc* file and add the following aliases:
 
 ~~~ bash
-alias tq='ti build -p android  -T device --skip-js-minify'
-alias tq_ios='ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 8.4 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .'
-alias tbs='ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
-alias tq_select='ti build -p ios -C ?'
+alias tq='appc ti build -p android  -T device --skip-js-minify'
+alias tq_ios='appc ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 8.4 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .'
+alias tbs='appc ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
+alias tq_select='appc ti build -p ios -C ?'
 ~~~
 then you can just write "tq" to compile and install on your connected device or write "tbs" to build an apk for the play store.
 
