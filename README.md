@@ -107,7 +107,7 @@ Download and install JDK 8 from http://www.oracle.com/technetwork/java/javase/do
 #### Android SDK
 Go to https://developer.android.com/studio/index.html#downloads and download the ZIP under "Get just the command line tools".
 
-Unzip and copy it to a folder (e.g. C:\android). Since the Android SDK doesn't include a GUI anymore you can use an alternative GUI like:
+Unzip and copy it to a folder (e.g. C:\android). Since the Android SDK doesn't include a GUI any more you can use an alternative GUI like:
 https://www.b4x.com/android/forum/threads/gui-sdk-manager-for-newer-versions-of-android-tools.80090/
 to install: 
 * Android SDK tools
