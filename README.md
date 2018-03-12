@@ -42,7 +42,7 @@ This tutorial will get you started setting up Axway Titanium and use it in combi
 
 ## Installing Appcelerator Titanium
 
-The current GA ('general availability') version of the SDK was 6.1.2.GA.
+The current GA ('general availability') version of the SDK was 7.0.2.GA.
 
 At first we need to setup Axway Titanium:
 * command line tools (CLI) to compile the apps
@@ -58,7 +58,7 @@ ___
 
 #### Fedora
 
-If you are using Fedora 26 you can run the following commands to get the needed libraries:
+If you are using Fedora 26/27 you can run the following commands to get the needed libraries:
 ```bash
 # install tools and libraries
 dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-devel.i686 ncurses-devel.i686 libX11-devel.i686 libXrender.i686 libXrandr.i686
@@ -68,12 +68,12 @@ dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-d
 sudo apt-get install nodejs npm git gcc  gcc-multilib openjdk-8-jdk android-tools-adb
 ```
 
-#### for all distros (if you don't have node v 6.x)
-If you do not have node v 6.x already you can up/downgrade with `n`
+#### for all distros (if you don't have node v 8.x)
+If you do not have node v 8.x already you can up/downgrade with `n`
 ``` bash
-# install npm version 6.x
+# install npm version 8.x
 npm install -g n
-n 6.11.1
+n 8.10.0
 
 ```
 * Install Java JDK 8: http://www.if-not-true-then-false.com/2014/install-oracle-java-8-on-fedora-centos-rhel/
@@ -93,10 +93,10 @@ ___
 ### Windows
 
 #### NodeJS
-Go to https://nodejs.org/download/release/v6.11.2/ and download NodeJS v6.11.2. If you already have a different version installed you can use nvw-windows (https://github.com/coreybutler/nvm-windows/releases) to change this version to v6.11.2.
+Go to https://nodejs.org/download/release/v8.10.0/ and download NodeJS v8.10.0. If you already have a different version installed you can use nvw-windows (https://github.com/coreybutler/nvm-windows/releases) to change this version to v8.10.0.
 ~~~ bash
-nvm install 6.11.2   # install a new version with nvm
-nvm use 6.11.2       # set it
+nvm install 8.10.0   # install a new version with nvm
+nvm use 8.10.0       # set it
 ~~~
 
 #### Java JDK
@@ -151,9 +151,9 @@ to get the SDK and be ready to create your apps
 ### OSS version
 If you prefer the open source version you run:
 ~~~ bash
-titanium sdk install --branch 6_1_X
+titanium sdk install --branch 7_0_X
 ~~~
-to get the SDK (it won't be the GA version but the latest from the 6.1.x branch) and then
+to get the SDK (it won't be the GA version but the latest from the 7.0.x branch) and then
 ~~~ bash
  ti config wizard
  ~~~
@@ -265,9 +265,11 @@ In **Linux/OSX** you open the *.bashrc* file and add the following aliases:
 
 ~~~ bash
 alias tq='appc ti build -p android  -T device --skip-js-minify'
-alias tq_ios='appc ti build -p ios --deploy-type production --distribution-name "DIST_NAME" --ios-version 8.4 --keychain  --pp-uuid PROF_ID --target dist-adhoc --output-dir .'
 alias tbs='appc ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
-alias tq_select='appc ti build -p ios -C ?'
+alias tq_only='appc ti build -p android --build-only'
+
+alias tq_ios='ti build -p ios -C ?'
+alias tq_ios_store='appc ti build -p ios --target ?'
 ~~~
 then you can just write "tq" to compile and install on your connected device or write "tbs" to build an apk for the play store.
 
