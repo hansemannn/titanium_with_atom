@@ -1,7 +1,7 @@
 # Getting started with Axway Appcelerator and Atom
 
-Beginning with Axway Titanium SDK 6.0.4.GA the "Indie Tear" is now free and you can get the latest SDK and use Hyperloop.
-This tutorial will get you started setting up Axway Titanium and use it in combination with Atom as an editor on Linux, Windows and OSX (you could use other editors like Sublime or Visual Studio Code but that's not part of this tutorial).
+Since Axway Titanium SDK 6.0.4.GA, the "Indie Tear" is now free and you can get the latest SDK and use Hyperloop.
+This tutorial will get you started setting up Axway Titanium and use it in combination with Atom as an editor on Linux, Windows and macOS (you could use other editors like Sublime or Visual Studio Code but that's not part of this tutorial).
 
 ![main view](images/main_view.png)
 
@@ -42,7 +42,7 @@ This tutorial will get you started setting up Axway Titanium and use it in combi
 
 ## Installing Appcelerator Titanium
 
-The current GA ('general availability') version of the SDK was 7.0.2.GA.
+The current GA ('general availability') version of the SDK was 7.1.0.GA.
 
 At first we need to setup Axway Titanium:
 * command line tools (CLI) to compile the apps
@@ -68,7 +68,7 @@ dnf install nodejs npm git gcc glibc.i686 glibc-devel.i686 libstdc++.i686 zlib-d
 sudo apt-get install nodejs npm git gcc  gcc-multilib openjdk-8-jdk android-tools-adb
 ```
 
-#### for all distros (if you don't have node v 8.x)
+#### For all Distros (if you don't have Node.js v8.x)
 If you do not have node v 8.x already you can up/downgrade with `n`
 ``` bash
 # install npm version 8.x
@@ -92,7 +92,7 @@ ___
 
 ### Windows
 
-#### NodeJS
+#### Node.js
 Go to https://nodejs.org/download/release/v8.10.0/ and download NodeJS v8.10.0. If you already have a different version installed you can use nvw-windows (https://github.com/coreybutler/nvm-windows/releases) to change this version to v8.10.0.
 ~~~ bash
 nvm install 8.10.0   # install a new version with nvm
@@ -123,11 +123,16 @@ Add the following paths to the PATH env variable:
 
 ___
 
-### OSX
+### macOS
 
-#### NodeJS
+#### Node.js
 
-*Todo*
+- Fresh install: Go to [Nodejs.org](https://nodejs.org/en/download/) and download the v8.10.0 (LTS). 
+- Upgrade: Install the Node version manager `n` and update to the LTS:
+~~~ bash
+npm install -g n
+n lts
+~~~
 
 ___
 
@@ -141,30 +146,32 @@ npm install -g titanium alloy appcelerator
 
 After that we need to install the SDK. 
 
-### free version
-The use the free/indie version you can run
+### Free Version
+If you use the free/indie version, you can run
 ~~~ bash
 appc setup
 ~~~
 to get the SDK and be ready to create your apps
 
-### OSS version
-If you prefer the open source version you run:
+### Open Source Version
+If you prefer the open source version, you run:
 ~~~ bash
-titanium sdk install --branch 7_0_X
+titanium sdk install --branch 7_1_X
 ~~~
-to get the SDK (it won't be the GA version but the latest from the 7.0.x branch) and then
+to get the SDK (it won't be the GA version but the latest from the 7.1.x branch) and then
 ~~~ bash
  ti config wizard
  ~~~
- to finish the setup
+ to finish the setup. Note: As of right now (03/2018), the current latest it 7.1.0 GA. You can
+ check the latest GA version by going to the [Titanium Build Server](http://builds.appcelerator.com)
+ to select the latest one.
 
 ___
 
-## Install Atom (and some useful packages)
+## Install Atom (and some useful Packages)
 
-### Windows/OSX:
-Goto https://atom.io/ and install the atom editor.
+### Windows / macOS:
+Go to https://atom.io/ and install the Atom editor.
 
 ### Linux (Fedora):
 ~~~ bash
@@ -178,12 +185,10 @@ Then install some Atom packages for easier Titanium coding:
 |Name | Type 	|  Features 	|
 |------------------------------	|---------------	|--------------
 | [Appcelerator Titanium IDE](https://atom.io/packages/appcelerator-titanium) | IDE | Official Atom package by Axway
-| [titanium language javascript](https://atom.io/packages/titanium-language-javascript) | Language | JS Autocomplete (non alloy)|                    	   
+| [titanium Language JavaScript](https://atom.io/packages/titanium-language-javascript) | Language | JS Autocomplete (non alloy)|                    	   
 | [Titanium Alloy](https://atom.io/packages/titanium-alloy) | add-on| All-in-one package<br>Jump to definition<br>Open related<br>TSS Highlight|
-| [Ti-Create](https://atom.io/packages/ti-create) |add-on| Create projects, controller, modules|
-| [Titanium-Build](https://atom.io/packages/Titanium-Build)| add-on| Run in simulator (wip)|
 
-Other useful non-titanium packages/add-ons:
+Other useful non-Titanium packages/add-ons:
 
 |Name |  Features 	|
 |------------------------------	|--------------
@@ -204,7 +209,7 @@ Other useful non-titanium packages/add-ons:
 
 ___
 
-## Create your first app
+## Create your first App
 
 For this tutorial we are just creating an empty Alloy app using CLI and Atom.
 
@@ -212,9 +217,10 @@ Open a new terminal and add the following :
 ~~~ bash
 appc new
 ~~~
-(for the OSS you change `appc` to `ti`).
+(for the OSS you change `appc new` to `ti create`).
 
-You will see a menu where you can select "Native app - Titanium SDK - set a project name - set an app id". For the beginning say `no` to the Test-service and Hyperloop.
+You will see a menu where you can select "Native app - Titanium SDK - set a project name - set an app id". 
+For the beginning, say `no` to the Test-service and Hyperloop.
 
 You can also use the Atom package ti-create
 
@@ -228,8 +234,7 @@ ___
 
 There are several ways to compile your app. You can use the simulator/emulator, deploy it to your device or create store apk's/ipa's. There is also a live test tool (TiShadow) which saves you a lot of time waiting for the compiler.
 
-### cli way
-
+### The CLI Way
 
 ~~~ bash
 # android to device
@@ -259,17 +264,22 @@ security find-identity -v -p codesigning
 
 You can save yourself a lot of typing when you define some aliases (e.g. 'tq' will run the whole ti command to compile it and deploy it to the connected android device).
 
-#### Linux / OSX
+#### Linux / macOS
 
-In **Linux/OSX** you open the *.bashrc* file and add the following aliases:
+In **Linux/macOS** you open the *.bashrc* file and add the following aliases:
 
 ~~~ bash
+# Run on Android device, skip minification to speed up the build
 alias tq='appc ti build -p android  -T device --skip-js-minify'
+# Distribute Android for Google Play, specify the required keystores
 alias tbs='appc ti build -p android -K /home/user/keyfile.keystore -T dist-playstore'
+# Create an Android APK without installing it to the device. Grab from build/android/bin
 alias tq_only='appc ti build -p android --build-only'
 
-alias tq_ios='ti build -p ios -C ?'
-alias tq_ios_store='appc ti build -p ios --target ?'
+# Run on iOS, specify a device
+alias tq_ios='appc ti build -p ios -C ?'
+# Distribute iOS for the App Store
+alias tq_ios_store='appc ti build -p ios --target dist-appstore'
 ~~~
 then you can just write "tq" to compile and install on your connected device or write "tbs" to build an apk for the play store.
 
@@ -308,7 +318,7 @@ It allows you to quickly test your app on multiple devices at the same time and 
 
 ___
 
-## Link list
+## Link List
 
 Here are some useful Titanium resources:
 
